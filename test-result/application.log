@@ -1,0 +1,7 @@
+23 Apr 2019 10:50:15,495 INFO  ~ Starting /Users/niallphelan/IdeaProjects/web/gym app/.
+23 Apr 2019 10:50:15,663 WARN  ~ You're running Play! in DEV mode
+23 Apr 2019 10:50:17,410 INFO  ~ HikariPool-1 - Starting...
+23 Apr 2019 10:50:17,486 INFO  ~ HikariPool-1 - Start completed.
+23 Apr 2019 10:50:17,497 INFO  ~ Connected to jdbc:h2:mem:play for default
+23 Apr 2019 10:50:18,826 INFO  ~ Application 'todolist' is now started !
+23 Apr 2019 10:50:19,776 INFO  ~ Rendering Start

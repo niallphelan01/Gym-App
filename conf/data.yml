@@ -1,0 +1,64 @@
+Assessment(t1):
+  address: courtown
+  height: 20
+  weight: 20
+  chest: 22
+  thigh: 24
+  upperArm: 20
+  waist: 20
+  hips: 20
+  comments: test
+
+Assessment(t2):
+
+  weight: 20
+  chest: 22
+  thigh: 24
+  upperArm: 20
+  waist: 20
+  hips: 20
+  comments: tests
+
+Assessment(t3):
+  address: courtown
+  height: 180
+  weight: 20
+  chest: 22
+  thigh: 24
+  upperArm: 20
+  waist: 20
+  hips: 20
+  comments: test2
+
+Member(m1):
+  name: homersimpson
+  gender: Male
+  email: homer@simpson.com
+  password: secret
+  address: courtown
+  height: 185
+  initialWeight: 79.2
+  assessmentlist:
+    - t1
+    - t2
+
+Member(m2):
+  name: margesimpson
+  gender: Female
+  email: marge@simpson.com
+  password: secret
+  address: Annascaul
+  height: 180
+  initialWeight: 72
+  Assessmentlist:
+    - t3
+
+Member(m3):
+  name: bartsimpson
+  gender: Male
+  email: bart@simpson.com
+  password: secret
+  address: Annascaul
+  height: 155
+  initialWeight: 50
+  Assessmentlist:
