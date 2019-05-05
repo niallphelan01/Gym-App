@@ -49,7 +49,8 @@ Assessment(b5):
       comments: Go Bart
 
 Member(m1):
-  name: homersimpson
+  firstname: homer
+  lastname: Simpson
   gender: Male
   email: homer@simpson.com
   password: secret
@@ -61,7 +62,8 @@ Member(m1):
     - b2
 
 Member(m2):
-  name: maggiesimpson
+  firstname: Maggie
+  lastname: Simpson
   gender: Female
   email: maggie@simpson.com
   password: secret
@@ -73,7 +75,8 @@ Member(m2):
     - b4
 
 Member(m3):
-  name: bartsimpson
+  firstname: Bart
+  lastname: Simpson
   gender: Male
   email: bart@simpson.com
   password: secret

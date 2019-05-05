@@ -12,15 +12,17 @@ import java.util.List;
 @Entity
 public class Trainer extends Model {
 
-    public String name;
+    public String firstname;
+    public String lastname;
     public String email;
     public String password;
 
     //@OneToOne(cascade = CascadeType.ALL)
     //public List<Assessment> assessmentlist = new ArrayList<Assessment>();
 
-    public Trainer(String name, String email, String password) {
-        this.name = name;
+    public Trainer(String firstname, String lastname, String email, String password) {
+        this.firstname = firstname;
+        this.lastname=lastname;
         this.email = email;
         this.password = password;
     }

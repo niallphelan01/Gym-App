@@ -11,7 +11,8 @@ import java.util.List;
 @Entity
 public class Member extends Model
 {
-  public String name;
+  public String firstname;
+  public String lastname;
   public String gender;
   public String email;
   public String password;
@@ -26,9 +27,10 @@ public class Member extends Model
   @OneToMany(cascade = CascadeType.ALL)
   public List<Assessment> assessmentlist = new ArrayList<Assessment>();
 
-  public Member(String name, String gender, String email, String password, String address, float initialWeight, float height)
+  public Member(String firstname, String lastname, String gender, String email, String password, String address, float initialWeight, float height)
   {
-    this.name = name;
+    this.firstname = firstname;
+    this.lastname = lastname;
     this.gender = gender;
     this.email = email;
     this.password = password;

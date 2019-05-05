@@ -17,10 +17,10 @@ public class Accounts extends Controller
     render("login.html");
   }
 
-  public static void register(String name, String gender, String email, String password, String address,float height,float initialWeight)
+  public static void register(String firstname, String lastname, String gender, String email, String password, String address,float height,float initialWeight)
   {
     Logger.info("Registering new user " + email);
-    Member member = new Member(name, gender, email, password, address, height, initialWeight);
+    Member member = new Member(firstname, lastname, gender, email, password, address, height, initialWeight);
     member.save();
     redirect("/");
   }
@@ -73,12 +73,13 @@ public class Accounts extends Controller
 
     render("accountdetails.html", member);
   }
-  public static void updateAccountDetails(String name, String gender, String email, String password, String address,float height,float initialWeight)
+  public static void updateAccountDetails(String firstname, String lastname, String gender, String email, String password, String address,float height,float initialWeight)
   {
     Member member;
     String memberId = session.get("logged_in_Memberid");
     member = Member.findById(Long.parseLong(memberId));
-    member.name=name;
+    member.firstname=firstname;
+    member.lastname=lastname;
     member.gender=gender;
     member.email=email;
     member.password=password;
