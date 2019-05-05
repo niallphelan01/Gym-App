@@ -1,34 +1,52 @@
-Assessment(t1):
-  address: courtown
-  height: 20
+Assessment(b1):
+  dT: 04/May/2019 10:00:30
   weight: 20
   chest: 22
   thigh: 24
   upperArm: 20
   waist: 20
   hips: 20
-  comments: test
+  comments: Come on Homer
 
-Assessment(t2):
-
+Assessment(b2):
+  dT: 05/May/2019 10:00:30
   weight: 20
   chest: 22
   thigh: 24
   upperArm: 20
   waist: 20
   hips: 20
-  comments: tests
+  comments: We will have to get the potato out of the couch
 
-Assessment(t3):
-  address: courtown
-  height: 180
+Assessment(b3):
+  dT: 06/May/2019 10:00:30
   weight: 20
   chest: 22
   thigh: 24
   upperArm: 20
   waist: 20
   hips: 20
-  comments: test2
+  comments: Well done to you Maggie
+
+Assessment(b4):
+    dT: 04/May/2019 10:00:30
+    weight: 20
+    chest: 22
+    thigh: 24
+    upperArm: 20
+    waist: 20
+    hips: 20
+    comments: Go Maggie
+
+Assessment(b5):
+      dT: 04/May/2019 10:00:30
+      weight: 20
+      chest: 22
+      thigh: 24
+      upperArm: 20
+      waist: 20
+      hips: 20
+      comments: Go Bart
 
 Member(m1):
   name: homersimpson
@@ -39,19 +57,20 @@ Member(m1):
   height: 185
   initialWeight: 79.2
   assessmentlist:
-    - t1
-    - t2
+    - b1
+    - b2
 
 Member(m2):
-  name: margesimpson
+  name: maggiesimpson
   gender: Female
-  email: marge@simpson.com
+  email: maggie@simpson.com
   password: secret
   address: Annascaul
   height: 180
   initialWeight: 72
-  Assessmentlist:
-    - t3
+  assessmentlist:
+    - b3
+    - b4
 
 Member(m3):
   name: bartsimpson
@@ -61,4 +80,10 @@ Member(m3):
   address: Annascaul
   height: 155
   initialWeight: 50
-  Assessmentlist:
+  assessmentlist:
+    - b5
+
+Trainer(t1):
+  name: margesimpson
+  email: marge@simpson.com
+  password: secret

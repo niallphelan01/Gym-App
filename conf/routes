@@ -12,6 +12,8 @@ POST   /authenticate                            Accounts.authenticate
 GET    /logout                                  Accounts.logout
 GET   /accountdetails                          Accounts.accountdetails
 POST   /updateAccountDetails                    Accounts.updateAccountDetails
+GET     /listAssessments/{memberid}                         listAssessmentCtrl.index
+GET  /updateComments/{id}/{memberid}                  listAssessmentCtrl.updateComments
 
 GET     /dashboard                              Dashboard.index
 POST    /dashboard/addassessment                     Dashboard.addAssessment

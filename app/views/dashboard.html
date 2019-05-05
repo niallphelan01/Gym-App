@@ -1,59 +1,69 @@
 #{extends 'main.html' /}
 #{set title:'Dashboard' /}
 
+
 #{menu id:"dashboard"/}
+<style>
+    #h3{
+        text-transform: uppercase;
+    }
+</style>
+
+<!-- The dashboard view is used to represent the current members status, i.e ideal weight indicator, current BMI...
+
+The first section of this webpage is used to show, the members name, the ideal weight indicator taken using the current
+ weight or if none entered to use the weight upon setup, the current BMI or BMI of the initial setup and the classification
+ of the BMI-->
 <section class="ui raised segment">
 
   <div class="ui grid">
       <div class="four column row">
-        <div class=" column">
+        <!-- User icon-->
+          <div class=" column">
           <i class = "huge user icon"></i>
-        </div>
-            <div class=" column">
+              <h3>${member.name}</h3>
+          </div>
+
+          <!-- Ideal body weight indicator-->
+          <div class=" column">
             #{if member.idealBodyWeight==false}
                 <i class="red huge tachometer alternate icon" ></i>
             #{/if}
             #{else}
                 <i class="green huge tachometer alternate icon"></i>
-
             #{/else}
+                <h3>IDEAL WEIGHT INDICATOR</h3>
+          </div>
 
-            </div>
-
+            <!-- Heart beat icon-->
           <div class=" column">
-          <i class = "huge heartbeat icon"></i>
-        </div>
+                    <i class = "huge heartbeat icon" ></i>
+                    <label style="font-size:30px">${member.bmi}</label>
+
+                    <h3>BMI</h3>
+                </div>
+
+
+          <!-- Huge doctor icon-->
             <div class=" column">
                 <i class = "huge doctor icon"></i>
+                <h3>${member.BMICategory}</h3>
             </div>
-      </div>
 
-      <div class="four column row">
-          <div class="column">
-              <h2>${member.name}</h2>
-          </div>
-          <div class=" column">
-              <h2>Ideal weight indicator</h2>
-          </div>
-          <div class=" column">
-          <h2>${member.bmi} BMI</h2>
-          </div>
-          <div class=" column">
-              <h2>${member.BMICategory}</h2>
-          </div>
       </div>
 
   </div>
 
 </section>
 
+<!-- This /div is used to allow the current member the ability to be able to enter their current weight and other
+     credentials using the form below -->
 
-</div>
 <form class="ui stacked segment form" action="/dashboard/addassessment" method="POST">
   <div class="three fields ">
     <div class="field">
        <label>Weight</label>
-       <input placeholder="00.00cm" type="text" name="weight">
+       <input placeholder="00.00kg" type="text" name="weight">
     </div>
     <div class="field">
        <label>Chest</label>
@@ -82,10 +92,12 @@
 
 </form>
 
+<!-- The section below is used to to represent the details of all previous assessments in a table -->
 <section class="ui raised segment">
   <table class="ui fixed table">
     <thead>
     <tr>
+        <th>Date</th>
       <th>Weight</th>
       <th>Chest</th>
       <th>Thigh</th>
@@ -99,6 +111,9 @@
     <tbody>
     #{list items:assessmentlist, as:'assessment'}
     <tr>
+        <td>
+        ${assessment.dT}
+        </td>
       <td>
       ${assessment.weight}
       </td>
@@ -120,6 +135,8 @@
         <td>
         ${assessment.comments}
         </td>
+    <td><a href="/dashboard/${member.id}/deleteassessment/${assessment.id}" class="ui icon button">
+        <i class="icon trash"></i></td>
     </tr>
     #{/list}
     </tbody>

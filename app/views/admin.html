@@ -1,5 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'Admin' /}
+#{menu id:"dashboard"/}
 
 <section class="ui raised segment">
   <header class="ui header">
@@ -9,7 +10,7 @@
 #{list items:member, as:'member'}
   <section class="ui segment">
     <h2>
-    <a href="/dashboard/" class="ui icon">
+    <a href="/listAssessments/${member.id}" class="ui icon">
       <i class="black github icon"></i></a><font size="2" color="blue">${member.name}</font>
       <p>assessment.</p>
     </h2>

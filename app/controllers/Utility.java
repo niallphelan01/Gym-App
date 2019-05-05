@@ -27,25 +27,25 @@ public class Utility {
             member.bmi = Float.parseFloat(df.format(bmi));
         }
     }
-    public static void bmiCategory()
+    public static void bmiCategory(Member member)
     {
-        Member member = Accounts.getLoggedInMember();
+        //Member member = Accounts.getLoggedInMember();
         if (member.bmi <16)
-            member.BMICategory="Severely Underweight";
+            member.BMICategory="SEVERLY UNDERWEIGHT";
         else if (member.bmi >=16 && member.bmi<18.5)
-            member.BMICategory="Underweight";
+            member.BMICategory="UNDERWEIGHT";
         else if (member.bmi >=18.5 && member.bmi<25)
-            member.BMICategory="Normal";
+            member.BMICategory="NORMAL";
         else if (member.bmi >=25 && member.bmi<30)
-            member.BMICategory="Overweight";
+            member.BMICategory="OVERWEIGHT";
         else if (member.bmi >=30 && member.bmi<35)
-            member.BMICategory="Moderately Obese";
+            member.BMICategory="MODERATELY OBESE";
         else if (member.bmi >35)
-            member.BMICategory="Severely Obese";
+            member.BMICategory="SEVERILY OBESE";
     }
-    public static void isIdealBodyWeight(Assessment assessment)
+    public static void isIdealBodyWeight(Assessment assessment, Member member)
     {
-        Member member = Accounts.getLoggedInMember();
+        //Member member = Accounts.getLoggedInMember();
         //add code to take in the most current weight
 
         double heightDifference=0;

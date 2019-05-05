@@ -15,4 +15,5 @@ public class Admin extends Controller
     List<Member> member = Member.findAll();
     render("admin.html", member);
   }
+
 }
