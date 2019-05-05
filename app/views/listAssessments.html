@@ -1,0 +1,113 @@
+#{extends 'main.html' /}
+#{set title:'Playlist' /}
+
+#{menu id:"dashboard"/}
+
+<section class="ui raised segment">
+
+    <div class="ui grid">
+        <div class="four column row">
+            <!-- User icon-->
+            <div class=" column">
+                <i class = "huge user icon"></i>
+                <h3>${member.name}</h3>
+            </div>
+
+            <!-- Ideal body weight indicator-->
+            <div class=" column">
+            #{if member.idealBodyWeight==false}
+                <i class="red huge tachometer alternate icon" ></i>
+            #{/if}
+            #{else}
+                <i class="green huge tachometer alternate icon"></i>
+            #{/else}
+                <h3>IDEAL WEIGHT INDICATOR</h3>
+            </div>
+
+            <!-- Heart beat icon-->
+            <div class=" column">
+                <i class = "huge heartbeat icon" ></i>
+                <label style="font-size:30px">${member.bmi}</label>
+
+                <h3>BMI</h3>
+            </div>
+            <!-- Huge doctor icon-->
+            <div class=" column">
+                <i class = "huge doctor icon"></i>
+                <h3>${member.BMICategory}</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ui raised segment">
+#{list items:assessmentlist, as:'assessment'}
+    <table class="ui fixed table">
+
+        <thead>
+        <tr>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Thigh</th>
+            <th>UpperArm</th>
+            <th>Waist</th>
+            <th>Hips</th>
+            <th>Comments</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td>
+            ${assessment.dT}
+            </td>
+            <td>
+            ${assessment.weight}
+            </td>
+            <td>
+            ${assessment.chest}
+            </td>
+            <td>
+            ${assessment.thigh}
+            </td>
+            <td>
+            ${assessment.upperArm}
+            </td>
+            <td>
+            ${assessment.waist}
+            </td>
+            <td>
+            ${assessment.hips}
+            </td>
+            <td>
+            ${assessment.comments}
+            </td>
+
+
+        </tr>
+
+
+
+        </tbody>
+
+    </table>
+        <div class="ui raised segment">
+            <div class="column">
+                <form class="ui stacked segment form" action="/updateComments/${assessment.id}/${member.id}" >
+                    <h3 class="ui header">Comment</h3>
+                        <div class="field">
+                            <label>Comments</label>
+                            <input value=${assessment.comments} type="text" name="comments">
+                            <button class="ui blue submit button">Update</button>
+                        </div>
+                </form>
+
+        </div>
+        </div>
+
+    #{/list}
+</section>
